@@ -29,4 +29,6 @@ disciplina -- leciona -- professor
 disciplina -- pre_rec -- disciplina
 disciplina -- calendário -- horários
 proc_matricula -- interesse -- disciplina
+
+ node0 [label = "teste"]
 }
