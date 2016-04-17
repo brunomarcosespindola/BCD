@@ -21,14 +21,14 @@ faz [shape=diamond]
 
 
 //LIGAÇOES
-aluno -- cursou -- disciplina
-aluno -- faz -- proc_matricula
-aluno -- estuda -- curso
-curso -- grade -- disciplina
-disciplina -- leciona -- professor
-disciplina -- pre_rec -- disciplina
-disciplina -- calendário -- horários
-proc_matricula -- interesse -- disciplina
+aluno -- cursou [taillabel = "n"] 		cursou -- disciplina [headlabel = "n"]
+aluno -- faz [taillabel = "1"]	 		faz -- proc_matricula [headlabel = "n"]
+aluno -- estuda [taillabel = "n"] 		estuda -- curso [headlabel = "n"]
+curso -- grade 	[taillabel = "1"]		grade -- disciplina [headlabel = "n"]
+disciplina -- leciona [taillabel = "n"]		leciona -- professor [headlabel = "1"]
+disciplina -- pre_rec [taillabel = "n"] 		pre_rec -- disciplina [headlabel = ""]
+disciplina -- calendário [taillabel = "n"]	calendário -- horários [headlabel = "1"]
+proc_matricula -- interesse [taillabel = "0"]	interesse -- disciplina [headlabel = "n"]
 
- node0 [label = "teste"]
+
 }
