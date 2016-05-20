@@ -19,6 +19,6 @@ PreRequisitos(***Disciplina,***PreRequisito)
 Horario(*Turno,*NumAula,*NumDia,*SemanaAB,**Disciplina,Semestre)
 Disciplina referencia Discplina (CodCurso)
 
-processoMatricula(***matricula,***disciplinca,semestre,concluido)
+processoMatricula(***matricula,***disciplina,semestre,concluido)
 disciplina  referencia disciplina (codigo)
 matricula referencia matricula(aluno,curso)
