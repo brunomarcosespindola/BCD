@@ -1,24 +1,24 @@
-Curso (*CódCurso,Nome)
+curso(*codigo,nome)
 
-Disciplina (*CódDisc, Fase, CargHora, **CódCurso, **SiapeProf, CargaHoraMin)
-	CódCurso referencia Curso
-	SiapeProf referencia Professor
+disciplina(*codigo,fase,CH,CHmin,**cursoCodigo, **professorSiape)
+cursoCodigo referencia curso (codigo)
+professorSiape referencia professor(siape)
 
-Aluno(*CpfAlu, Nome)
+aluno(*cpf,nome,senha)
 
 Matrícula (*NumMatricula, **CpfAlu, **CódCurso)
 	CpfAlu referencia Aluno
 	CódCurso referencia Curso
 
-Professor(*SiapeProf, Nome)
+professor(*siape,nome)
 
-PréRequisito(*CódDisc, *PreReq)
-	CódDisc referencia Disciplina
-	PréReq referencia Disciplina(CódDisc)
+PreRequisitos(***Disciplina,***PreRequisito)
+	Disciplina referencia disciplina(codigo)
+	PreRequisito referencia disciplina(codigo)
 
-Horário(*Turno, *NumAula, *NumDia, *SemanaAB, ***CódDisc, Semestre)
-	CódDisc referencia Disciplina
+Horario(*Turno,*NumAula,*NumDia,*SemanaAB,**Disciplina,Semestre)
+Disciplina referencia Discplina (CodCurso)
 
-ProcessoMatricula (***CpfAlu , ***CódDisc, Concluído, Semestre)
-	CpfAlu referencia Aluno
-	CódDisc referencia Disciplina
+processoMatricula(***matricula,***disciplinca,semestre,concluido)
+disciplina  referencia disciplina (codigo)
+matricula referencia matricula(aluno,curso)
